@@ -40,17 +40,13 @@ public class Word {
 
     public static String showLetters(String word, String guesses) {
         String res = "";
-        for (int k=0; k<word.length(); k++) {
-            res += '_';
-        }
+        for (int k=0; k<word.length(); k++) res += '_';
         for (int i=0; i < guesses.length(); i++) {
             for (int j=0; j < word.length(); j++) {
-                if (res.charAt(j) == '_') {
-                    if (word.charAt(j) == guesses.charAt(i)) {
-                        String left = res.substring(0, j);
-                        String right = res.substring(j + 1);
-                        res = left + guesses.charAt(i) + right;
-                    }
+                if ((res.charAt(j) == '_') && (word.charAt(j) == guesses.charAt(i))) {
+                    String left = res.substring(0, j);
+                    String right = res.substring(j + 1);
+                    res = left + guesses.charAt(i) + right;
                 }   
             }
         }
