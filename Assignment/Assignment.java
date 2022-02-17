@@ -26,9 +26,9 @@ public class Assignment {
 
             // if statements to choose what option you want
             if (input.equals("1")) {
-                getCombinations(); // call the method to get all possible combinations
+                getCombinations(in); // call the method to get all possible combinations
             } else if (input.equals("2")) {
-                getWord(); // calls method getWord to print a word mapped to user digits entered
+                getWord(in); // calls method getWord to print a word mapped to user digits entered
             } else if (input.equals("3")) { // a list of group memeber names - their student number
                 System.out.println("--Credits--");
                 System.out.println("Group Members:");
@@ -43,6 +43,8 @@ public class Assignment {
             }
             System.out.println("");
         }
+
+        in.close();
     }
 
     // building the recursive function
@@ -61,9 +63,7 @@ public class Assignment {
     }
 
     // building the getCombinations function
-    public static void getCombinations() {
-
-        Scanner in = new Scanner(System.in);
+    public static void getCombinations(Scanner in) {
 
         // requesting the inputs
         System.out.print("Please enter your input to print all the possible combinations: ");
@@ -100,8 +100,8 @@ public class Assignment {
     }
 
     // building the getWord function
-    public static void getWord() {
-        Scanner in = new Scanner(System.in);
+    public static void getWord(Scanner in) {
+
         System.out.print("To use two letters from the same key please seperate with 0 or 1.\nPlease enter your digits to print a word: "); // waiting for user input
         String input = in.next();
 
