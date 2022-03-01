@@ -32,5 +32,7 @@ public class Main
         
         Animal ani = new Animal(name);
         System.out.println(ani.greeting());
+
+        in.close();
     }
 }
